@@ -1,0 +1,6 @@
+<h2>All lessons</h2>
+<h4>Total lessons: {{allLessons?.length}}</h4>
+<input type="text" class="search-bar" placeholder="search" #input (keyup)="search(input.value)">
+<div class="lessons-list-container v-h-center-block-parent">
+  <lessons-list [lessons]="filtered"></lessons-list>
+</div>

@@ -6,14 +6,30 @@ import { firebaseConfig } from '../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2/index';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { RouterModule } from '@angular/router';
+import { routerConfig } from './router.config';
 import { initializeApp } from 'firebase';
 
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
+
+import { LessonsService } from './shared/model/lessons.service';
+import { CoursesService } from './shared/model/courses.service';
+
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { LessonsListComponent } from './lessons-list/lessons-list.component';
+import { TopMenuComponent } from './top-menu/top-menu.component';
+import { CoursesComponent } from './courses/courses.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    LessonsListComponent,
+    TopMenuComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
@@ -21,9 +37,10 @@ import { AppComponent } from './app.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routerConfig)
   ],
-  providers: [],
+  providers: [LessonsService, CoursesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
