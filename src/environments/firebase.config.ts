@@ -9,5 +9,3 @@ export const firebaseConfig = {
     messagingSenderId: "652879546436"
 };
 
-◊
-

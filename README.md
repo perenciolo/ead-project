@@ -1,5 +1,5 @@
 
-# ead-project
+# EAD webapp project
 
 # Repository contents
 
