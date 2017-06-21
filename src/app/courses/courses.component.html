@@ -2,6 +2,6 @@
   <tr class="course-summary" *ngFor="let course of (courses$ | async)">
     <td><img class="lesson-logo" src="https://material.angularjs.org/latest/img/icons/angular-logo.svg"></td>
     <td class="description">{{course.description}}</td>
-    <td><button>View</button></td>
+    <td><button [routerLink]="course.url">View</button></td>
   </tr>
 </table>

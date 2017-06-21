@@ -21,6 +21,7 @@ import { HomeComponent } from './home/home.component';
 import { LessonsListComponent } from './lessons-list/lessons-list.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { CoursesComponent } from './courses/courses.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CoursesComponent } from './courses/courses.component';
     HomeComponent,
     LessonsListComponent,
     TopMenuComponent,
-    CoursesComponent
+    CoursesComponent,
+    CourseDetailComponent
   ],
   imports: [
     BrowserModule,
