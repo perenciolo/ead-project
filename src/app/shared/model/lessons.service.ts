@@ -17,4 +17,19 @@ export class LessonsService {
         .map(Lesson.fromJSONList)
     );
   }
+
+  /**
+   * Returns a Observable of type Lesson
+   */
+  findLessonByUrl(url: string): Observable<Lesson> {
+    return (
+      this.db
+        .list('lessons', {
+          query: {
+            orderByChild: 'url',
+            equalTo: url
+          }
+        })
+        .map(results => Lesson.fromJSON(results[0])));
+  }
 }
